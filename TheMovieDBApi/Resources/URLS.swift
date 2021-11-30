@@ -9,5 +9,5 @@ import Foundation
 
 enum URLS: String {
     case mainURL = "https://api.themoviedb.org/3/"
-    case trendingMoviesPath = "trending/all/week?api_key="
+    case trendingMoviesPath = "trending/movie/week?api_key="
 }

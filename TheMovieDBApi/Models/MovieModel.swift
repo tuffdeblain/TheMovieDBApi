@@ -50,4 +50,11 @@ struct TrendingMovie: Codable {
         
         mediaType = value["media_type"] as? String
     }
+    
+    static func getRandomUser(from value: Any) -> [TrendingMovie]? {
+        guard let value = value as? [String : Any] else { return [] }
+        guard let results = value["results"] as? [[String: Any]] else { return [] }
+        return results.compactMap { TrendingMovie(value: $0)}
+    }
+
 }

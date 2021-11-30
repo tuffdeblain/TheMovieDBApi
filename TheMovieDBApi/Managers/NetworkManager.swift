@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+import UIKit
 
 class NetworkManager {
     
@@ -13,7 +14,17 @@ class NetworkManager {
     
     private init() {}
     
-    func getFilms(_ completion: @escaping ([TrendingMovie]) -> Void) {
-        AF.request(
+    func getFilms(apiKey: String, completion: @escaping ([TrendingMovie]) -> Void) {
+        AF.request(URLS.mainURL.rawValue + URLS.trendingMoviesPath.rawValue + apiKey)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    guard let results = TrendingMovie.getRandomUser(from: value) else { return }
+                    completion(results)
+                case .failure(_):
+                    print("fuck")
+                }
+            }
     }
 }
