@@ -1,0 +1,6 @@
+framework module Pods_TheMovieDBApi {
+  umbrella header "Pods-TheMovieDBApi-umbrella.h"
+
+  export *
+  module * { export * }
+}
