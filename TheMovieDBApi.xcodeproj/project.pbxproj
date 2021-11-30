@@ -14,6 +14,9 @@
 		C51FCE3F275671A8009F4230 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C51FCE3D275671A8009F4230 /* Main.storyboard */; };
 		C51FCE41275671A9009F4230 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C51FCE40275671A9009F4230 /* Assets.xcassets */; };
 		C51FCE44275671A9009F4230 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C51FCE42275671A9009F4230 /* LaunchScreen.storyboard */; };
+		C55CA0CE27567C500042FC5A /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55CA0CD27567C500042FC5A /* MovieModel.swift */; };
+		C55CA0D1275688D80042FC5A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55CA0D0275688D80042FC5A /* NetworkManager.swift */; };
+		C55CA0D52756895F0042FC5A /* URLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55CA0D42756895F0042FC5A /* URLS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		C51FCE40275671A9009F4230 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C51FCE43275671A9009F4230 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C51FCE45275671A9009F4230 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C55CA0CD27567C500042FC5A /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		C55CA0D0275688D80042FC5A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C55CA0D42756895F0042FC5A /* URLS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +62,6 @@
 				8810FD26E7C2368EA955F504 /* Pods-TheMovieDBApi.debug.xcconfig */,
 				823DDF415481A6A8871073FC /* Pods-TheMovieDBApi.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -84,12 +89,39 @@
 				C51FCE37275671A8009F4230 /* AppDelegate.swift */,
 				C51FCE39275671A8009F4230 /* SceneDelegate.swift */,
 				C51FCE3B275671A8009F4230 /* ViewController.swift */,
+				C55CA0D2275688DC0042FC5A /* Managers */,
 				C51FCE3D275671A8009F4230 /* Main.storyboard */,
-				C51FCE40275671A9009F4230 /* Assets.xcassets */,
+				C55CA0D3275689500042FC5A /* Resources */,
 				C51FCE42275671A9009F4230 /* LaunchScreen.storyboard */,
 				C51FCE45275671A9009F4230 /* Info.plist */,
+				C55CA0CF27567D850042FC5A /* Models */,
 			);
 			path = TheMovieDBApi;
+			sourceTree = "<group>";
+		};
+		C55CA0CF27567D850042FC5A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C55CA0CD27567C500042FC5A /* MovieModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C55CA0D2275688DC0042FC5A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C55CA0D0275688D80042FC5A /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C55CA0D3275689500042FC5A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C51FCE40275671A9009F4230 /* Assets.xcassets */,
+				C55CA0D42756895F0042FC5A /* URLS.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,7 +239,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C55CA0CE27567C500042FC5A /* MovieModel.swift in Sources */,
+				C55CA0D52756895F0042FC5A /* URLS.swift in Sources */,
 				C51FCE3C275671A8009F4230 /* ViewController.swift in Sources */,
+				C55CA0D1275688D80042FC5A /* NetworkManager.swift in Sources */,
 				C51FCE38275671A8009F4230 /* AppDelegate.swift in Sources */,
 				C51FCE3A275671A8009F4230 /* SceneDelegate.swift in Sources */,
 			);
