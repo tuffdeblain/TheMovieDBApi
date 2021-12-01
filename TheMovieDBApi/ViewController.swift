@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var image: UIImageView!
     var trendingMovies: [TrendingMovie]?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,10 @@ class ViewController: UIViewController {
             self.trendingMovies = trendingMovies
                         print(self.trendingMovies?.count)
             
+        }
+        
+        ImageManager.shared.getUserImage(from: URLS.imageURL.rawValue + (trendingMovies?[4].posterPath ?? "")) { imageData in
+            self.image.image = UIImage(data: imageData)
         }
         
     }

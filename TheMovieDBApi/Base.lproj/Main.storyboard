@@ -32,16 +32,28 @@
                                     <action selector="ауебой:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GYT-XO-ZaS"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hh1-aU-F5l">
+                                <rect key="frame" x="87" y="267.5" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hh1-aU-F5l" secondAttribute="height" multiplier="15:8" id="47U-VT-i5P"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7Qv-XJ-YjU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="50U-Hx-0V8"/>
                             <constraint firstItem="Xlb-Jo-9ez" firstAttribute="top" secondItem="7Qv-XJ-YjU" secondAttribute="bottom" constant="233" id="Hbx-jc-ksg"/>
+                            <constraint firstItem="hh1-aU-F5l" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="15:56" id="I66-6j-mmc"/>
                             <constraint firstItem="Xlb-Jo-9ez" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JdD-eH-daF"/>
+                            <constraint firstItem="hh1-aU-F5l" firstAttribute="top" secondItem="7Qv-XJ-YjU" secondAttribute="bottom" constant="63" id="aC1-8t-ELE"/>
+                            <constraint firstItem="hh1-aU-F5l" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pPW-9H-Kvq"/>
                             <constraint firstItem="Xlb-Jo-9ez" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="wcf-2Z-Npk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="image" destination="hh1-aU-F5l" id="EuW-iJ-CVc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
