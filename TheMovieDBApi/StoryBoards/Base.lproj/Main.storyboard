@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="21P-vs-F5E">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -58,6 +59,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="30" y="70"/>
+        </scene>
+        <!--Top Rated Movies View Controller-->
+        <scene sceneID="Cdu-0M-AUC">
+            <objects>
+                <collectionViewController id="21P-vs-F5E" customClass="TopRatedMoviesViewController" customModule="TheMovieDBApi" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="DqV-2i-qu3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hko-YS-sNJ">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moviieCell" id="jQ2-Xr-pj0" customClass="TopRatedMoviesCell" customModule="TheMovieDBApi" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="177" height="266"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bTQ-FM-uiT">
+                                    <rect key="frame" x="0.0" y="0.0" width="177" height="266"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EQb-b9-j2e">
+                                            <rect key="frame" x="0.0" y="0.0" width="177" height="266"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="EQb-b9-j2e" secondAttribute="height" multiplier="177:266" id="yzI-7u-98y"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="EQb-b9-j2e" firstAttribute="centerX" secondItem="bTQ-FM-uiT" secondAttribute="centerX" id="KA1-Wq-KNH"/>
+                                        <constraint firstItem="EQb-b9-j2e" firstAttribute="width" secondItem="bTQ-FM-uiT" secondAttribute="height" multiplier="177:266" id="mCp-7M-3xm"/>
+                                        <constraint firstItem="EQb-b9-j2e" firstAttribute="centerY" secondItem="bTQ-FM-uiT" secondAttribute="centerY" id="tKk-ew-xLJ"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="177" height="266"/>
+                                <connections>
+                                    <outlet property="movieImage" destination="EQb-b9-j2e" id="lYL-OO-3s6"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="21P-vs-F5E" id="bBp-v5-sdM"/>
+                            <outlet property="delegate" destination="21P-vs-F5E" id="hzw-TP-OgS"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kBK-xb-xPa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1108.6956521739132" y="69.642857142857139"/>
         </scene>
     </scenes>
     <resources>

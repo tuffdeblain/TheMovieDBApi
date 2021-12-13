@@ -22,8 +22,8 @@ class NetworkManager {
                 case .success(let value):
                     guard let results = TrendingMovie.getRandomUser(from: value) else { return }
                     completion(results)
-                case .failure(_):
-                    print("fuck")
+                case .failure(let error):
+                    print(error)
                 }
             }
     }

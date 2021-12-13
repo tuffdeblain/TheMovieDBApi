@@ -24,7 +24,7 @@ class ViewController: UIViewController {
             
         }
         
-        ImageManager.shared.getUserImage(from: URLS.imageURL.rawValue + (trendingMovies?[4].posterPath ?? "")) { imageData in
+        ImageManager.shared.getUserImage(from: URLS.imageURL.rawValue + (trendingMovies?[1].posterPath ?? "")) { imageData in
             self.image.image = UIImage(data: imageData)
         }
         
