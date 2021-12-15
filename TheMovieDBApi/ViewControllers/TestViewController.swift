@@ -11,9 +11,9 @@ class TestViewController: UIViewController {
 
     @IBOutlet weak var testCollection: UICollectionView!
     private var trendingMovies: [TrendingMovie?] = []
-    let sectionInserts = UIEdgeInsets(top: 20,
+    let sectionInserts = UIEdgeInsets(top: 10,
                                       left: 10,
-                                      bottom: 20,
+                                      bottom: 10,
                                       right: 10 )
     
     override func viewDidLoad() {
@@ -21,6 +21,8 @@ class TestViewController: UIViewController {
         parseData()
         testCollection.showsVerticalScrollIndicator = false
         testCollection.showsHorizontalScrollIndicator = false
+
+        
         // Do any additional setup after loading the view.
     }
     
@@ -48,7 +50,7 @@ extension TestViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         cell.getImage(imageURL: URLS.imageURL.rawValue + (trendingMovies[indexPath.item]?.posterPath ?? ""))
         cell.movieImage.sizeToFit()
-        cell.layer.cornerRadius = cell.layer.bounds.width / 25
+        cell.layer.cornerRadius = cell.layer.bounds.width / 10
         return cell
     }
     
@@ -56,7 +58,7 @@ extension TestViewController: UICollectionViewDataSource, UICollectionViewDelega
         let paddingWidth = sectionInserts.top * (2)
         let avaibleWidth = collectionView.frame.width - paddingWidth
         let widthParItem = avaibleWidth / 3
-        let heightParItem = widthParItem * 1.5
+        let heightParItem = testCollection.visibleSize.height
         return CGSize(width: widthParItem, height: heightParItem)
     }
 
