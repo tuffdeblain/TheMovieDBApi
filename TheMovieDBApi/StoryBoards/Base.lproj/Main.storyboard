@@ -139,13 +139,51 @@
                     <connections>
                         <outlet property="topMoviesCollection" destination="aU5-l2-8rw" id="wG4-eU-0in"/>
                         <outlet property="topSerialsCollection" destination="FEX-eu-9I1" id="UgF-c2-MxC"/>
+                        <segue destination="J1e-Ls-VFv" kind="show" identifier="serialsInfoSegue" id="8Tu-5b-p6J"/>
+                        <segue destination="J1e-Ls-VFv" kind="show" identifier="moviesInfoSegue" id="YZb-Ry-N1s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEN-aD-tF6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="247.82608695652175" y="69.642857142857139"/>
         </scene>
+        <!--MovieTV Info View Controller-->
+        <scene sceneID="DTm-ag-ulm">
+            <objects>
+                <viewController id="J1e-Ls-VFv" customClass="MovieTVInfoViewController" customModule="TheMovieDBApi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hJl-a8-xXF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOb-5y-GBy">
+                                <rect key="frame" x="20" y="0.0" width="374" height="294"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Mm4-O1-pOW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EOb-5y-GBy" firstAttribute="leading" secondItem="Mm4-O1-pOW" secondAttribute="leading" constant="20" id="XlB-ds-CG9"/>
+                            <constraint firstItem="EOb-5y-GBy" firstAttribute="top" secondItem="Mm4-O1-pOW" secondAttribute="top" id="aLg-wm-zeJ"/>
+                            <constraint firstItem="Mm4-O1-pOW" firstAttribute="trailing" secondItem="EOb-5y-GBy" secondAttribute="trailing" constant="20" id="b56-E9-aix"/>
+                            <constraint firstItem="Mm4-O1-pOW" firstAttribute="bottom" secondItem="EOb-5y-GBy" secondAttribute="bottom" constant="514" id="juh-5V-o4q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LOf-V1-J14"/>
+                    <connections>
+                        <outlet property="testLabel" destination="EOb-5y-GBy" id="tW7-bc-RxP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NGf-zS-N4k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1107" y="80"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="YZb-Ry-N1s"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
