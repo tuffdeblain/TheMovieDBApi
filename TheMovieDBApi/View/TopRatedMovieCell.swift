@@ -7,10 +7,11 @@
 
 import UIKit
 
-class TestCell: UICollectionViewCell {
+class TopRatedMovieCell: UICollectionViewCell {
     @IBOutlet weak var movieImage: UIImageView!
+    
     func getImage(imageURL: String) {
-        ImageManager.shared.getUserImage(from: imageURL) { imageData in
+        ImageManager.shared.getPoster(from: imageURL) { imageData in
             self.movieImage.image = UIImage(data: imageData)
         }
     }

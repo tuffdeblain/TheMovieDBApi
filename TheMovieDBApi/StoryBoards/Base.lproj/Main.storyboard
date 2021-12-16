@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Test View Controller-->
+        <!--Movies View Controller-->
         <scene sceneID="2qI-Ph-RHi">
             <objects>
-                <viewController id="6bo-BH-MjM" customClass="TestViewController" customModule="TheMovieDBApi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6bo-BH-MjM" customClass="MoviesViewController" customModule="TheMovieDBApi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pqp-w5-tHA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ayeCell" id="D6l-YZ-hex" customClass="TestCell" customModule="TheMovieDBApi" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="movieCell" id="D6l-YZ-hex" customClass="TopRatedMovieCell" customModule="TheMovieDBApi" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="7.5" width="120" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DIP-Js-yqh">
@@ -67,76 +67,83 @@
                                     <outlet property="delegate" destination="6bo-BH-MjM" id="cbU-oO-Cea"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top serials of the week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIs-Ng-0j9">
+                                <rect key="frame" x="20" y="308" width="374" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FEX-eu-9I1">
+                                <rect key="frame" x="8" y="333" width="398" height="186.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FEX-eu-9I1" secondAttribute="height" multiplier="374:175" id="9j4-di-uye"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0Ss-Lb-J8m">
+                                    <size key="itemSize" width="128" height="160"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="serialCell" id="yWl-tZ-KYh" customClass="TopRatedSerialsCell" customModule="TheMovieDBApi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="13.5" width="120" height="160"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nG4-HJ-E57">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="160"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FYa-hv-eGf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="160"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="FYa-hv-eGf" secondAttribute="height" multiplier="3:4" id="Plw-IB-dNH"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FYa-hv-eGf" firstAttribute="centerX" secondItem="nG4-HJ-E57" secondAttribute="centerX" id="iwx-2V-Asb"/>
+                                                <constraint firstItem="FYa-hv-eGf" firstAttribute="centerY" secondItem="nG4-HJ-E57" secondAttribute="centerY" id="l67-P6-pPH"/>
+                                                <constraint firstItem="FYa-hv-eGf" firstAttribute="width" secondItem="nG4-HJ-E57" secondAttribute="height" multiplier="3:4" id="wvt-cN-BP1"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="120" height="160"/>
+                                        <connections>
+                                            <outlet property="serialImage" destination="FYa-hv-eGf" id="q6g-24-RAk"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="6bo-BH-MjM" id="Xic-sc-obH"/>
+                                    <outlet property="delegate" destination="6bo-BH-MjM" id="WPM-Kp-waI"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CIi-Oj-GXc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="CIi-Oj-GXc" firstAttribute="trailing" secondItem="FEX-eu-9I1" secondAttribute="trailing" constant="8" id="3oY-nc-bK4"/>
+                            <constraint firstItem="FEX-eu-9I1" firstAttribute="top" secondItem="BIs-Ng-0j9" secondAttribute="bottom" constant="8" symbolic="YES" id="FZE-k0-skT"/>
+                            <constraint firstItem="FEX-eu-9I1" firstAttribute="leading" secondItem="CIi-Oj-GXc" secondAttribute="leading" constant="8" id="KyK-RD-O75"/>
+                            <constraint firstItem="BIs-Ng-0j9" firstAttribute="leading" secondItem="CIi-Oj-GXc" secondAttribute="leading" constant="20" id="W6O-K9-ZGa"/>
                             <constraint firstItem="Egk-w6-4qT" firstAttribute="top" secondItem="CIi-Oj-GXc" secondAttribute="top" constant="45" id="X1l-iK-Lxy"/>
                             <constraint firstItem="aU5-l2-8rw" firstAttribute="top" secondItem="Egk-w6-4qT" secondAttribute="bottom" constant="8" symbolic="YES" id="X9e-ct-pJU"/>
                             <constraint firstItem="aU5-l2-8rw" firstAttribute="leading" secondItem="CIi-Oj-GXc" secondAttribute="leading" constant="8" id="ccd-Se-6gW"/>
+                            <constraint firstItem="FEX-eu-9I1" firstAttribute="width" secondItem="FEX-eu-9I1" secondAttribute="height" multiplier="374:175" id="dEx-YU-q4b"/>
+                            <constraint firstItem="BIs-Ng-0j9" firstAttribute="top" secondItem="aU5-l2-8rw" secondAttribute="bottom" constant="8" symbolic="YES" id="gkN-CM-PXt"/>
                             <constraint firstItem="Egk-w6-4qT" firstAttribute="leading" secondItem="CIi-Oj-GXc" secondAttribute="leading" constant="20" id="lxU-Kb-uWp"/>
                             <constraint firstItem="CIi-Oj-GXc" firstAttribute="trailing" secondItem="aU5-l2-8rw" secondAttribute="trailing" constant="8" id="nVT-QZ-sK8"/>
+                            <constraint firstItem="CIi-Oj-GXc" firstAttribute="trailing" secondItem="BIs-Ng-0j9" secondAttribute="trailing" constant="20" id="sAM-mi-c9q"/>
                             <constraint firstItem="CIi-Oj-GXc" firstAttribute="trailing" secondItem="Egk-w6-4qT" secondAttribute="trailing" constant="20" id="wl8-1g-MDd"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="testCollection" destination="aU5-l2-8rw" id="wG4-eU-0in"/>
+                        <outlet property="topMoviesCollection" destination="aU5-l2-8rw" id="wG4-eU-0in"/>
+                        <outlet property="topSerialsCollection" destination="FEX-eu-9I1" id="UgF-c2-MxC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEN-aD-tF6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="247.82608695652175" y="69.642857142857139"/>
-        </scene>
-        <!--Top Rated Movies View Controller-->
-        <scene sceneID="Cdu-0M-AUC">
-            <objects>
-                <collectionViewController id="21P-vs-F5E" customClass="TopRatedMoviesViewController" customModule="TheMovieDBApi" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="DqV-2i-qu3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hko-YS-sNJ">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moviieCell" id="jQ2-Xr-pj0" customClass="TopRatedMoviesCell" customModule="TheMovieDBApi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="177" height="266"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bTQ-FM-uiT">
-                                    <rect key="frame" x="0.0" y="0.0" width="177" height="266"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EQb-b9-j2e">
-                                            <rect key="frame" x="0.0" y="0.0" width="177" height="266"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="EQb-b9-j2e" secondAttribute="height" multiplier="177:266" id="yzI-7u-98y"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="EQb-b9-j2e" firstAttribute="centerX" secondItem="bTQ-FM-uiT" secondAttribute="centerX" id="KA1-Wq-KNH"/>
-                                        <constraint firstItem="EQb-b9-j2e" firstAttribute="width" secondItem="bTQ-FM-uiT" secondAttribute="height" multiplier="177:266" id="mCp-7M-3xm"/>
-                                        <constraint firstItem="EQb-b9-j2e" firstAttribute="centerY" secondItem="bTQ-FM-uiT" secondAttribute="centerY" id="tKk-ew-xLJ"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <size key="customSize" width="177" height="266"/>
-                                <connections>
-                                    <outlet property="movieImage" destination="EQb-b9-j2e" id="lYL-OO-3s6"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="21P-vs-F5E" id="bBp-v5-sdM"/>
-                            <outlet property="delegate" destination="21P-vs-F5E" id="hzw-TP-OgS"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kBK-xb-xPa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1108.6956521739132" y="69.642857142857139"/>
         </scene>
     </scenes>
     <resources>
