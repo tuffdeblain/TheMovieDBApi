@@ -13,7 +13,7 @@ class ImageManager {
     
     private init() {}
     
-    func getUserImage(from url: String, completion: @escaping (Data) -> Void) {
+    func getPoster(from url: String, completion: @escaping (Data) -> Void) {
         AF.request(url)
             .validate()
             .responseData { response in

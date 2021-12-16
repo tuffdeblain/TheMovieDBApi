@@ -20,7 +20,21 @@ class NetworkManager {
             .responseJSON { dataResponse in
                 switch dataResponse.result {
                 case .success(let value):
-                    guard let results = TrendingMovie.getRandomUser(from: value) else { return }
+                    guard let results = TrendingMovie.getTopMovies(from: value) else { return }
+                    completion(results)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+    }
+    
+    func getSerials(apiKey: String, completion: @escaping ([TrendingSerial]) -> Void) {
+        AF.request(URLS.mainURL.rawValue + URLS.trendingSerialsPath.rawValue + apiKey)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    guard let results = TrendingSerial.getTopSerials(from: value) else { return }
                     completion(results)
                 case .failure(let error):
                     print(error)
