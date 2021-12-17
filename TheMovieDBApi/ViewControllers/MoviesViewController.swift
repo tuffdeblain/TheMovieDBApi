@@ -19,6 +19,7 @@ class MoviesViewController: UIViewController {
     
     private var trendingMovies: [TrendingMovie?] = []
     private var trendingSerials: [TrendingSerial?] = []
+    private var cellIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,31 @@ class MoviesViewController: UIViewController {
 }
  
 extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "serialsInfoSegue" {
+            if let destination = segue.destination as? MovieTVInfoViewController {
+                destination.trendingSerials = trendingSerials[cellIndex]
+            }
+        }
+        if segue.identifier == "moviesInfoSegue" {
+            if let destination = segue.destination as? MovieTVInfoViewController {
+                destination.trendingMovies = trendingMovies[cellIndex]
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        cellIndex = indexPath.item
+        if collectionView == topSerialsCollection {
+            performSegue(withIdentifier: "serialsInfoSegue", sender: nil)
+        }
+        if collectionView == topMoviesCollection {
+            performSegue(withIdentifier: "moviesInfoSegue", sender: nil)
+        }
+        
+
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == topMoviesCollection {
             return trendingMovies.count
@@ -64,8 +90,6 @@ extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDele
         } else {
             return UICollectionViewCell()
         }
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
