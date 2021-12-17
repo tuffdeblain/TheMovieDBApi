@@ -19,7 +19,7 @@ class MoviesViewController: UIViewController {
     
     private var trendingMovies: [TrendingMovie?] = []
     private var trendingSerials: [TrendingSerial?] = []
-    private var testIndex = 0
+    private var cellIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,18 +37,18 @@ extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDele
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "serialsInfoSegue" {
             if let destination = segue.destination as? MovieTVInfoViewController {
-                destination.testText = trendingSerials[testIndex]?.originalName ?? "Error"
+                destination.trendingSerials = trendingSerials[cellIndex]
             }
         }
         if segue.identifier == "moviesInfoSegue" {
             if let destination = segue.destination as? MovieTVInfoViewController {
-                destination.testText = trendingMovies[testIndex]?.originalTitle ?? "Error"
+                destination.trendingMovies = trendingMovies[cellIndex]
             }
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        testIndex = indexPath.item
+        cellIndex = indexPath.item
         if collectionView == topSerialsCollection {
             performSegue(withIdentifier: "serialsInfoSegue", sender: nil)
         }
