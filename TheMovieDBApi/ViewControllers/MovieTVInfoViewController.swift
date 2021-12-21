@@ -8,9 +8,10 @@
 import UIKit
 
 class MovieTVInfoViewController: UIViewController {
-    @IBOutlet weak var backdropImage: UIImageView!
-    @IBOutlet weak var originalNameLabel: UILabel!
-    @IBOutlet weak var localizedNameLabel: UILabel!
+   @IBOutlet weak var backdropImage: UIImageView!
+//    @IBOutlet weak var originalNameLabel: UILabel!
+//    @IBOutlet weak var localizedNameLabel: UILabel!
+    @IBOutlet weak var overviewLabel: UILabel!
     
     var isMovie = false
     var trendingMovies: TrendingMovie?
@@ -29,7 +30,7 @@ extension MovieTVInfoViewController {
                 self.backdropImage.image = UIImage(data: backdropData)
         }
         backdropImage.layer.cornerRadius = backdropImage.frame.height / 25
-        
+
     }
     
     private func checkArray() -> Bool{
@@ -45,12 +46,14 @@ extension MovieTVInfoViewController {
         
         if isMovie {
             getBackDropImage(path: trendingMovies?.backdropPath ?? "")
-            originalNameLabel.text = trendingMovies?.originalTitle
-            localizedNameLabel.text = trendingMovies?.title
+//            originalNameLabel.text = trendingMovies?.originalTitle
+//            localizedNameLabel.text = trendingMovies?.title
+            overviewLabel.text = trendingMovies?.overview
         } else {
             getBackDropImage(path: trendingSerials?.backdropPath ?? "")
-            originalNameLabel.text = trendingSerials?.originalName
-            localizedNameLabel.text = trendingSerials?.name
+//            originalNameLabel.text = trendingSerials?.originalName
+//            localizedNameLabel.text = trendingSerials?.name
+            overviewLabel.text = trendingSerials?.overview
         }
     }
 }
